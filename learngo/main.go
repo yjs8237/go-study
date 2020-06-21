@@ -17,9 +17,22 @@ func main() {
 	fmt.Println(len)
 	fmt.Println(retName)
 
-	var length int  , var testName string = getLenAndUpper("jisang")
+	// value 를 무시할 수도있다
+	length, _ := getLenAndUpper("test")
 	fmt.Println(length)
 
+	repeatWord("test", "test1", "test2")
+	length, _ = lastProcess("lastFunction")
+	fmt.Println(length)
+}
+
+func lastProcess(name string) (int, string) {
+	defer fmt.Println("finished!! lastProcess")
+	return len(name), strings.ToUpper(name)
+}
+
+func repeatWord(words ...string) {
+	fmt.Println(words)
 }
 
 func getLenAndUpper(name string) (int, string) {
